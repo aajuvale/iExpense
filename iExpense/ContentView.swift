@@ -5,16 +5,20 @@
 //  Created by Ahmed Juvale on 7/25/25.
 //
 
+import Combine
 import SwiftUI
 
-struct User {
+class User: ObservableObject {
+    @Published
     var firstName = "Scott"
+
+    @Published
     var lastName = "Pilgrim"
 }
 
 struct ContentView: View {
-    @State
-    private var user = User()
+    @StateObject
+    var user = User()
 
     var body: some View {
         VStack {
